@@ -3,8 +3,6 @@
 
 A powerful text summarization application with dual-mode capabilities (extractive & abstractive) and multi-file format support.
 
-![Demo Screenshot](https://via.placeholder.com/800x500.png?text=Smart+Text+Summarizer+GUI+Demo)
-
 ## 🚀 Features
 
 - **Dual Summarization Modes**
