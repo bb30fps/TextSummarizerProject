@@ -1,8 +1,8 @@
-# 📝 Smart Text Summarizer GUI
+# Text Summarizer
 
 A powerful text summarization application with dual-mode capabilities (extractive & abstractive) and multi-file format support.
 
-## 🚀 Features
+## Features
 
 - **Dual Summarization Modes**
   - 🧠 **Extractive**: Traditional NLP-based sentence selection
@@ -16,7 +16,7 @@ A powerful text summarization application with dual-mode capabilities (extractiv
   - 📏 Adjustable summary length control
   - 🛠 Error-resistant design with progress indicators
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8+
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 python -m nltk.downloader punkt stopwords
 ```
 
-## 🖥 Usage
+## Usage
 
 1. **Launch Application**
    ```bash
@@ -60,7 +60,7 @@ python -m nltk.downloader punkt stopwords
 
 ![Interface Guide](https://via.placeholder.com/600x400.png?text=GUI+Interface+Breakdown)
 
-## 🛠 Troubleshooting
+## Troubleshooting
 
 **Common Issues**:
 - **Model Download Failures**:
@@ -79,7 +79,7 @@ python -m nltk.downloader punkt stopwords
 python -m pip install python-tk
 ```
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please follow these steps:
 1. Fork the repository
