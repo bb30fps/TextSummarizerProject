@@ -30,7 +30,7 @@ cd TextSummarizerProject
 
 # Create virtual environment (recommended)
 python -m venv venv
-venv\Scripts\activate     # Windows
+venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
