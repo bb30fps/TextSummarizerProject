@@ -20,6 +20,7 @@ python-docx
 pdfplumber
 transformers
 torch
+sentencepiece
 
 Now verify :: Check if Tkinter is properly installed by running:
 
