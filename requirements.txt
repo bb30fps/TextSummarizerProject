@@ -4,3 +4,4 @@ pdfplumber
 transformers
 torch
 tkinter
+sentencepiece
