@@ -1,4 +1,3 @@
-```markdown
 # 📝 Smart Text Summarizer GUI
 
 A powerful text summarization application with dual-mode capabilities (extractive & abstractive) and multi-file format support.
