@@ -1,0 +1,62 @@
+Project Overview ::
+This is an advanced text summarization tool that combines traditional NLP techniques with modern AI to:
+- Process multiple file formats (TXT/DOCX/PDF)
+- Dual summarization modes: Extractive & Abstractive
+- Provide a user-friendly GUI with real-time feedback
+
+>>>>>
+
+Libraries::
+
+-File Handling - python-docx, pdfplumber 
+-NLP Processing - NLTK, spaCy (indirect via transformers) 
+-Deep Learning - Hugging Face Transformers, PyTorch 
+-GUI - Tkinter, ttk 
+
+Key Algorithms
+Extractive Mode:
+- NLTK-based sentence scoring
+- Frequency distribution analysis
+- Contraction mapping
+- Randomized sentence selection
+
+Abstractive Mode:
+- Google's Pegasus-XSum transformer model
+- Creative generation parameters:
+  - Temperature sampling (0.8)
+  - Top-k & Top-p sampling
+  - Repetition penalty
+
+>>>>>
+
+Unique Differentiators::
+
+1. Multi-Format Support
+   - Handles PDF/DOCX/TXT seamlessly
+   - Preserves formatting during extraction
+
+2. Hybrid Approach
+   - Switch between extractive/abstractive modes
+   - Combined frequency analysis + neural generation
+
+3. Creative Abstractive
+   - Custom temperature/repetition settings
+   - Post-processing for readability
+   - Novelty-focused generation
+
+4. User Experience
+   - Progress visualization
+   - Error-resilient design
+   - Auto-adjusting summary length
+
+
+>>>>>
+
+Implementation Challenges Solved
+
+1. Format Preservation
+   - Unified text extraction from PDF/DOCX
+
+2. Usability
+   - Auto-scaling GUI elements
+   - Context-sensitive help
