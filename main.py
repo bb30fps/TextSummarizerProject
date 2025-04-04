@@ -33,8 +33,7 @@ class TextSummarizerApp:
         self.model_selector.current(0)
 
     def _create_contraction_map(self):
-        """Dictionary for expanding contractions"""
-        return { "ain't": "is not", "aren't": "are not","can't": "cannot", "'cause": "because", "could've": "could have", "couldn't": "could not",
+        return {"ain't": "is not", "aren't": "are not","can't": "cannot", "'cause": "because", "could've": "could have", "couldn't": "could not",
                            "didn't": "did not",  "doesn't": "does not", "don't": "do not", "hadn't": "had not", "hasn't": "has not", "haven't": "have not",
                            "he'd": "he would","he'll": "he will", "he's": "he is", "how'd": "how did", "how'd'y": "how do you", "how'll": "how will", "how's": "how is",
                            "I'd": "I would", "I'd've": "I would have", "I'll": "I will", "I'll've": "I will have","I'm": "I am", "I've": "I have", "i'd": "i would",
@@ -56,10 +55,9 @@ class TextSummarizerApp:
                            "would've": "would have", "wouldn't": "would not", "wouldn't've": "would not have", "y'all": "you all",
                            "y'all'd": "you all would","y'all'd've": "you all would have","y'all're": "you all are","y'all've": "you all have",
                            "you'd": "you would", "you'd've": "you would have", "you'll": "you will", "you'll've": "you will have",
-                           "you're": "you are", "you've": "you have" }
+                           "you're": "you are", "you've": "you have"}
 
     def _setup_interface(self):
-        """Initialize GUI components"""
         # Configure grid layout
         self.master.grid_columnconfigure(0, weight=1)
         self.master.grid_rowconfigure(1, weight=1)
@@ -106,8 +104,7 @@ class TextSummarizerApp:
         self._arrange_widgets()
         self.model_selector.bind("<<ComboboxSelected>>", self._update_ui)
 
-    def _arrange_widgets(self):
-        """Position all UI elements"""
+    def _arrange_widgets(self):        #Position all UI elements
         # Input area
         self.input_label.grid(row=0, column=0, padx=15, pady=10, sticky=tk.W)
         self.input_text.grid(row=1, column=0, columnspan=5, padx=15, pady=5,
@@ -128,8 +125,7 @@ class TextSummarizerApp:
                               sticky=tk.NSEW)
         self.output_scroll.grid(row=4, column=5, sticky=tk.NS)
 
-    def _load_models(self):
-        """Initialize abstractive summarization model"""
+    def _load_models(self):       #Initialize abstractive summarization model
         try:
             self.abstractive_model = pipeline(
                 "summarization",
@@ -140,8 +136,8 @@ class TextSummarizerApp:
             messagebox.showwarning("Model Error",
                                    f"Abstractive model failed to load:\n{str(e)}")
 
-    def _update_ui(self, event=None):
-        """Update UI based on selected mode"""
+    def _update_ui(self, event=None):        #Update UI based on selected mode
+
         mode = self.model_var.get()
         if mode == "abstractive":
             self.length_label.config(text="Max Summary Length (words):")
@@ -152,8 +148,7 @@ class TextSummarizerApp:
             self.length_entry.delete(0, tk.END)
             self.length_entry.insert(0, "3")
 
-    def _handle_file_upload(self):
-        """Handle file uploads from various formats"""
+    def _handle_file_upload(self):       #Handle file uploads from various formats
         file_types = [
             ("Text Files", "*.txt"),
             ("Word Documents", "*.docx"),
@@ -170,8 +165,7 @@ class TextSummarizerApp:
                 messagebox.showerror("File Error",
                                      f"Failed to read file:\n{str(e)}")
 
-    def _read_file(self, path):
-        """Read content from different file formats"""
+    def _read_file(self, path):        #Read content from different file formats
         if path.endswith('.txt'):
             with open(path, 'r', encoding='utf-8') as f:
                 return f.read()
@@ -183,8 +177,7 @@ class TextSummarizerApp:
                 return '\n'.join([page.extract_text() for page in pdf.pages])
         raise ValueError("Unsupported file format")
 
-    def _generate_summary(self):
-        """Main summary generation handler"""
+    def _generate_summary(self):        #Main summary generation
         try:
             input_text = self.input_text.get(1.0, tk.END).strip()
             if not input_text:
@@ -203,8 +196,7 @@ class TextSummarizerApp:
         except Exception as e:
             messagebox.showerror("Processing Error", str(e))
 
-    def _extractive_summary(self, text):
-        """Generate extractive summary using NLTK"""
+    def _extractive_summary(self, text):        #Generate extractive summary using NLTK
         try:
             num_sentences = int(self.length_entry.get())
             if num_sentences <= 0:
@@ -243,8 +235,7 @@ class TextSummarizerApp:
         except ValueError as e:
             raise ValueError(f"Extractive error: {str(e)}")
 
-    def _abstractive_summary(self, text):
-        """Generate abstractive summary with precise length control"""
+    def _abstractive_summary(self, text):        #Generate abstractive summary with precise length control
         if not self.abstractive_model:
             raise ValueError("Abstractive model not loaded")
 
@@ -267,8 +258,7 @@ class TextSummarizerApp:
         except ValueError:
             raise ValueError("Invalid word limit")
 
-    def _process_abstractive_output(self, summary, target):
-        """Post-process abstractive summary to meet word limit"""
+    def _process_abstractive_output(self, summary, target):    #Post-process abstractive summary to meet word limit
         # Sentence-based trimming
         sentences = sent_tokenize(summary)
         word_count = 0
@@ -295,8 +285,7 @@ class TextSummarizerApp:
         processed = processed.replace(" 's", "'s").replace(" n't", "n't")
         return processed[0].upper() + processed[1:]
 
-    def _expand_contractions(self, text):
-        """Expand contractions in text"""
+    def _expand_contractions(self, text):       #Expand contractions in text
         words = word_tokenize(text)
         expanded = []
         for word in words:
