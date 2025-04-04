@@ -1,0 +1,6 @@
+nltk
+python-docx
+pdfplumber
+transformers
+torch
+tkinter
