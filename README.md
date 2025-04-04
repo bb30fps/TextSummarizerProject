@@ -58,8 +58,6 @@ python -m nltk.downloader punkt stopwords
    - Click "Generate Summary" button
    - First abstractive use will download AI models (~1.5GB)
 
-![Interface Guide](https://via.placeholder.com/600x400.png?text=GUI+Interface+Breakdown)
-
 ## Troubleshooting
 
 **Common Issues**:
