@@ -3,5 +3,9 @@ python-docx
 pdfplumber
 transformers
 torch
-tkinter
 sentencepiece
+pytesseract
+opencv-python
+Pillow
+opencv-contrib-python
+numpy
