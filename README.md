@@ -76,19 +76,6 @@ pip install -r requirements.txt
 python -m nltk.downloader punkt stopwords
 ```
 
-### GUI Workflow
-1. **Input Selection**
-   - Paste text or choose file (📁 button)
-   - Adjust processing parameters
-2. **Processing**
-   - Real-time progress tracking
-   - Automatic error recovery
-3. **Output Management**
-   - Copy to clipboard
-   - Export as Markdown/PDF
-   - Share via integrated options
-
-
 ## Usage
 
 1. **Launch Application**
@@ -115,6 +102,14 @@ python -m nltk.downloader punkt stopwords
 python -m pip install python-tk
 ```
 
+
+## Acknowledgments
+
+- Hugging Face for [Transformers](https://huggingface.co/) library
+- NLTK team for natural language tools
+- Python community for amazing open-source libraries
+- Tesseract OCR Community
+
 ## Contributing
 
 We welcome contributions! Please follow these steps:
@@ -123,14 +118,6 @@ We welcome contributions! Please follow these steps:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-
-## Acknowledgments
-
-- Hugging Face for [Transformers](https://huggingface.co/) library
-- NLTK team for natural language tools
-- Python community for amazing open-source libraries
-- Tesseract OCR Community
 
 
 **Note**: First abstractive summarization may take 2-5 minutes for model download. Subsequent uses will be faster!
