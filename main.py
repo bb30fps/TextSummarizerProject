@@ -54,7 +54,6 @@ class TextSummarizerApp:
         return None
 
     def _create_contraction_map(self):
-        """Dictionary for expanding contractions"""
         return {"ain't": "is not", "aren't": "are not", "can't": "cannot", "'cause": "because", "could've": "could have", "couldn't": "could not",
                 "didn't": "did not",  "doesn't": "does not", "don't": "do not", "hadn't": "had not", "hasn't": "has not", "haven't": "have not",
                 "he'd": "he would", "he'll": "he will", "he's": "he is", "how'd": "how did", "how'd'y": "how do you", "how'll": "how will", "how's": "how is",
@@ -372,7 +371,6 @@ class TextSummarizerApp:
             messagebox.showerror("Processing Error", str(e))
 
     def _extractive_summary(self, text):
-        """Improved extractive summarization with intelligent randomization"""
         try:
             num_sentences = int(self.length_entry.get())
             if num_sentences <= 0:
