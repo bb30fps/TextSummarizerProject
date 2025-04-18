@@ -41,7 +41,6 @@
 
 
 **Troubleshooting Common Issues**:
-```markdown
 - ❗ OCR Failure: Check Tesseract installation path in settings
 - 🐢 Slow Performance: Reduce summary length or switch to extractive mode
 - 💾 Storage Full: Clear model cache from `~/.cache/huggingface`
