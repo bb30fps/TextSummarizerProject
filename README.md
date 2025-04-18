@@ -244,7 +244,6 @@ repetition_penalty = 1.2
 ## 🤝 Contributing
 
 ### Development Setup
-```bash
 # Install dev dependencies
 pip install -r requirements-dev.txt
 
@@ -253,19 +252,7 @@ pytest tests/ --cov=src --cov-report=html
 
 # Build executable
 pyinstaller --onefile --windowed src/main.py
-```
 
-### Contribution Guidelines
-1. Follow [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) branching model
-2. Maintain 85%+ test coverage
-3. Document new features in `/docs`
-4. Use PEP8-compliant code style
-
-## 📚 Documentation
-
-- [Architecture Overview](docs/ARCHITECTURE.md)
-- [API Reference](docs/API.md)
-- [Benchmark Results](docs/BENCHMARKS.md)
 
 
 ## 🙏 Acknowledgements
@@ -275,15 +262,3 @@ pyinstaller --onefile --windowed src/main.py
 - NLTK Contributors
 
 
-**☕ Support Project**  
-[![Buy Me Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/yourprofile)
-```
-
-> **Note to Developers:**  
-> 1. Replace placeholder URLs and contact info
-> 2. Add actual screenshots/diagrams in `/docs`
-> 3. Update benchmark data with real metrics
-> 4. Customize configuration options as needed
-> 5. Add contributor guidelines specific to your workflow
-
-This comprehensive summary follows GitHub best practices while maintaining technical depth. It balances user-friendly presentation with developer-focused details, making it suitable for both end-users and contributors.
