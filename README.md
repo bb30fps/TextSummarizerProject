@@ -1,26 +1,64 @@
-# Text Summarizer
+# Text Summarizer Pro Max
 
-A powerful text summarization application with dual-mode capabilities (extractive & abstractive) and multi-file format support.
+**An intelligent summarization toolkit** with multi-format support and AI-powered capabilities
 
 ## Features
 
-- **Dual Summarization Modes**
-  - 🧠 **Extractive**: Traditional NLP-based sentence selection
-  - 🤖 **Abstractive**: AI-powered summary generation using transformers
-- **File Format Support**
-  - 📄 Text (.txt)
-  - 📑 Word (.docx)
-  - 📊 PDF (.pdf)
-- **Smart Features**
-  - 🔄 Contraction expansion (e.g., "don't" → "do not")
-  - 📏 Adjustable summary length control
-  - 🛠 Error-resistant design with progress indicators
+**Input Options**
+   - ✍️ **Direct Input**: Type/paste text into the main text area
+   - 📤 **File Upload**: Click "Upload File" button supported formats:
+     - Documents: `.txt`, `.docx`, `.pdf`
+     - Images: `.jpg`, `.jpeg`, `.png`, `.bmp`
+
+**Mode Selection**
+   - 🔍 **Extractive Mode**:
+     - Use numeric entry widget to choose sentence count (3-15)
+     - Ideal for quick overviews of large documents
+   - 🧪 **Abstractive Mode**:
+     - Set word limit (150-500 words recommended)
+     - First use downloads `bart-large-cnn` model (~1.5GB)
+     - Requires stable internet connection
+
+**Generate Summary**
+   - Click the "⚡ Process" button
+   - Monitor progress via status bar:
+     - 📊 Processing stages shown in real-time
+     - ⬇️ Model download progress (first abstractive use)
+   - Typical processing times:
+     - Extractive: 2-5 seconds
+     - Abstractive: 10-30 seconds (GPU), 1-2 minutes (CPU)
+
+
+**Output Handling**
+   - 📋 Copy summary to clipboard with right-click menu
+   - 💾 Save using "Export" options:
+     - Text file (.txt)
+     - Word document (.docx)
+     - Markdown (.md)
+   - 🖼️ For image inputs: 
+     - Preview enhanced image in right panel
+     - Compare original vs OCR-processed text
+
+
+**Troubleshooting Common Issues**:
+```markdown
+- ❗ OCR Failure: Check Tesseract installation path in settings
+- 🐢 Slow Performance: Reduce summary length or switch to extractive mode
+- 💾 Storage Full: Clear model cache from `~/.cache/huggingface`
+- 🔗 Connection Issues: Manual model download available [here](https://huggingface.co/models)
+
+
+### Core Components
+| Component | Technology |
+|-----------|------------|
+| **NLP Engine** | NLTK, spaCy, Transformers |
+| **AI Models** | BART, T5 (Hugging Face) |
+| **OCR** | Tesseract 5.0 + OpenCV |
+| **GUI** | Custom Tkinter Framework |
+| **Processing** | Multi-threaded Architecture |
+
 
 ## Installation
-
-### Prerequisites
-- Python 3.8+
-- pip package manager
 
 ### Setup
 ```bash
@@ -38,6 +76,19 @@ pip install -r requirements.txt
 # Download NLTK data
 python -m nltk.downloader punkt stopwords
 ```
+
+### GUI Workflow
+1. **Input Selection**
+   - Paste text or choose file (📁 button)
+   - Adjust processing parameters
+2. **Processing**
+   - Real-time progress tracking
+   - Automatic error recovery
+3. **Output Management**
+   - Copy to clipboard
+   - Export as Markdown/PDF
+   - Share via integrated options
+
 
 ## Usage
 
@@ -59,20 +110,7 @@ python -m nltk.downloader punkt stopwords
    - First abstractive use will download AI models (~1.5GB)
      
 
-## Troubleshooting
-
-**Common Issues**:
-- **Model Download Failures**:
-  - Check internet connection
-  - Retry with VPN if needed
-- **File Read Errors**:
-  - Ensure files are not password protected
-  - Verify file integrity
-- **CUDA Out of Memory**:
-  - Reduce abstractive word limit
-  - Close other GPU-intensive applications
-
-**For Windows Users**:
+**Install**:
 ```bash
 # If facing Tkinter issues
 python -m pip install python-tk
@@ -93,20 +131,11 @@ We welcome contributions! Please follow these steps:
 - Hugging Face for [Transformers](https://huggingface.co/) library
 - NLTK team for natural language tools
 - Python community for amazing open-source libraries
+- Tesseract OCR Community
 
----
 
 **Note**: First abstractive summarization may take 2-5 minutes for model download. Subsequent uses will be faster!
 ```
-
-This README includes:
-1. Clear visual hierarchy with emojis
-2. Detailed installation instructions
-3. Visual guides (placeholder images - replace with actual screenshots)
-4. Troubleshooting section
-5. Contribution guidelines
-6. License and acknowledgments
-7. Mobile-friendly formatting
 
 For best results:
 1. Replace placeholder images with actual screenshots
@@ -116,149 +145,6 @@ For best results:
 5. Add contact information for support
 
 
-===========================================================================================================================================================
 
-# Text Summarizer Pro Max 🚀
-
-**An intelligent summarization toolkit** with multi-format support and AI-powered capabilities
-
-![App Interface Demo](screenshots/app-demo.gif) <!-- Add actual GIF -->
-
-## 🌟 Key Features
-
-### Core Capabilities
-- **Dual Summarization Modes**
-  - 📊 **Extractive**: Statistical analysis + NLP techniques
-  - 🤖 **Abstractive**: Transformer-based AI generation
-- **Multi-Source Input**
-  - 📄 Documents (TXT, DOCX, PDF)
-  - 🖼️ Images (JPG, PNG, BMP)
-  - 📋 Direct text input
-
-### Advanced Features
-- **Smart OCR Integration**
-  - Auto-image enhancement (denoising, contrast adjustment)
-  - Multi-language support (English, French, Spanish)
-- **Customization**
-  - Adjustable summary length (sentences/words)
-  - GPU/CPU mode switching
-  - Configurable model parameters
-- **Error Resilience**
-  - Automatic fallback mechanisms
-  - Comprehensive input validation
-  - Memory optimization
-
-## 🛠️ Technology Stack
-
-### Core Components
-| Component | Technology |
-|-----------|------------|
-| **NLP Engine** | NLTK, spaCy, Transformers |
-| **AI Models** | BART, T5 (Hugging Face) |
-| **OCR** | Tesseract 5.0 + OpenCV |
-| **GUI** | Custom Tkinter Framework |
-| **Processing** | Multi-threaded Architecture |
-
-### Performance Metrics
-- Handles documents up to 50 pages
-- Processes images up to 8MP resolution
-- Abstracts 1000 words in <15s (GPU)
-
-## 📦 Installation
-
-### System Requirements
-- **Minimum**
-  - 4GB RAM
-  - 2GB Disk Space
-  - Python 3.8+
-  
-- **Recommended (AI Mode)**
-  - NVIDIA GPU (8GB VRAM+)
-  - 16GB RAM
-  - SSD Storage
-
-```bash
-# Clone with submodules
-git clone --recurse-submodules https://github.com/yourusername/text-summarizer-pro.git
-
-# Setup virtual environment
-python -m venv .venv
-source .venv/bin/activate  # Linux/macOS
-.\.venv\Scripts\activate  # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-## 🚀 Usage Scenarios
-
-### Command Line Interface
-```bash
-# Basic text summarization
-python summarize.py --text "your text here" --mode abstractive
-
-# Process PDF document
-python summarize.py --file document.pdf --length 5
-
-# Batch image processing
-python ocr_process.py --input-dir images/ --output summaries/
-```
-
-### GUI Workflow
-1. **Input Selection**
-   - Paste text or choose file (📁 button)
-   - Adjust processing parameters
-2. **Processing**
-   - Real-time progress tracking
-   - Automatic error recovery
-3. **Output Management**
-   - Copy to clipboard
-   - Export as Markdown/PDF
-   - Share via integrated options
-
-![Workflow Diagram](docs/workflow.png) <!-- Add actual diagram -->
-
-## ⚙️ Configuration
-
-Edit `config/settings.ini`:
-```ini
-[Processing]
-max_file_size = 50MB  # 10MB-100MB
-language_preference = eng+fra
-gpu_threshold = 512  # Switch to GPU above this word count
-
-[Advanced]
-beam_search_width = 4
-temperature = 0.85
-repetition_penalty = 1.2
-```
-
-## 🌍 Supported Languages
-| Language | OCR | Summarization |
-|----------|-----|---------------|
-| English  | ✅  | ✅            |
-| French   | ✅  | ✅            |
-| Spanish  | ✅  | ⚠️ Beta       |
-| German   | ⚠️  | ⚠️ Beta       |
-
-## 🤝 Contributing
-
-### Development Setup
-# Install dev dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-pytest tests/ --cov=src --cov-report=html
-
-# Build executable
-pyinstaller --onefile --windowed src/main.py
-
-
-
-## 🙏 Acknowledgements
-
-- Hugging Face Transformers Library
-- Tesseract OCR Community
-- NLTK Contributors
 
 
