@@ -1,53 +1,69 @@
 Project Overview ::
-This is an advanced text summarization tool that combines traditional NLP techniques with modern AI to:
-- Process multiple file formats (TXT/DOCX/PDF)
-- Dual summarization modes: Extractive & Abstractive
-- Provide a user-friendly GUI with real-time feedback
+
+This is an advanced text summarization tool that combines traditional NLP techniques with modern AI along with OCR functionality.
 
 >>>>>
 
 Libraries::
 
--File Handling - python-docx, pdfplumber 
--NLP Processing - NLTK, spaCy (indirect via transformers) 
--Deep Learning - Hugging Face Transformers, PyTorch 
--GUI - Tkinter, ttk 
+- GUI: tkinter with ttk for modern widgets
+- NLP:
+  - nltk (tokenization, stopwords, frequency analysis)
+  - transformers (Hugging Face pipelines)
+- Document Processing:
+  - docx (Word documents)
+  - pdfplumber (PDF extraction)
+- Computer Vision:
+  - OpenCV (image preprocessing)
+  - pytesseract (OCR integration)
+  - PIL/Pillow (image handling)
+- ML Framework: torch (PyTorch backend for Transformers)
 
-Key Algorithms
-Extractive Mode:
-- NLTK-based sentence scoring
-- Frequency distribution analysis
-- Contraction mapping
-- Randomized sentence selection
+Core Algorithms & Techniques:
+1. Extractive Summarization:
+   - NLTK-based sentence scoring using:
+   - Word frequency analysis (FreqDist)
+   - Positional bias weighting
+   - Randomization for diversity
+   - Contraction expansion for better processing
 
-Abstractive Mode:
-- Google's Pegasus-XSum transformer model
-- Creative generation parameters:
-  - Temperature sampling (0.8)
-  - Top-k & Top-p sampling
-  - Repetition penalty
+2. Abstractive Summarization:
+   - BART-large-CNN model from Hugging Face Transformers
+   - Beam search with temperature (0.85) and top-k/top-p sampling
+   - Length-constrained generation with repetition penalty
+
+3. OCR Processing:
+   - OpenCV image enhancement pipeline:
+   - Denoising (Non-local Means)
+   - CLAHE contrast enhancement
+   - Adaptive thresholding
+   - Sharpening filter
+   - Tesseract OCR with custom config
 
 >>>>>
 
 Unique Differentiators::
 
-1. Multi-Format Support
-   - Handles PDF/DOCX/TXT seamlessly
-   - Preserves formatting during extraction
+1. Multi-Format Input Support:
+   - Text files, Word docs, PDFs, and images (JPEG, PNG, BMP)
+   - OCR text extraction with image preprocessing
 
-2. Hybrid Approach
-   - Switch between extractive/abstractive modes
-   - Combined frequency analysis + neural generation
+2. Hybrid UI Controls:
+   - Dynamic UI switching between extractive/abstractive modes
+   - Interactive image preview with OCR results
+   - Progress tracking for long operations
 
-3. Creative Abstractive
-   - Custom temperature/repetition settings
-   - Post-processing for readability
-   - Novelty-focused generation
+3. Advanced Text Processing:
+   - Contraction handling (100+ contractions supported)
+   - Summary length control:
+   - Sentence count for extractive
+   - Word limit for abstractive
+   - Post-processing for grammatical correctness
 
-4. User Experience
-   - Progress visualization
-   - Error-resilient design
-   - Auto-adjusting summary length
+4. Performance Optimizations:
+   - CUDA acceleration for transformer models
+   - Intelligent sentence selection with diversity factors
+   - Memory-efficient image preview handling
 
 
 >>>>>
