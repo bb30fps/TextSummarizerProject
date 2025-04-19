@@ -1,6 +1,6 @@
 # Text Summarizer Pro Max
 
-**An intelligent summarization toolkit** with multi-format support and AI-powered capabilities
+**An intelligent summarization toolkit with multi-format support and AI-powered capabilities**
 
 ## Features
 
