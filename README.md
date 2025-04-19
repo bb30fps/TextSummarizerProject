@@ -120,15 +120,7 @@ We welcome contributions! Please follow these steps:
 5. Open a Pull Request
 
 
-**Note**: First abstractive summarization may take 2-5 minutes for model download. Subsequent uses will be faster!
-```
-
-For best results:
-1. Replace placeholder images with actual screenshots
-2. Update repository URLs
-3. Add actual license file
-4. Include system requirements section if needed
-5. Add contact information for support
+**Note**: First abstractive summarization may take 2-5 minutes for model download.
 
 
 
